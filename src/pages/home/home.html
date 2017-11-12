@@ -1,0 +1,39 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Home
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  The world is your oyster.
+<ion-grid>
+  <ion-row>
+    <ion-col>
+      <ion-item>
+        <ion-label color="primary" stacked>Aircraft Model</ion-label>
+        <ion-input type="password" placeholder="Model"></ion-input>
+      </ion-item>
+    </ion-col>
+    <ion-col>
+      <ion-item>
+        <ion-label color="primary" stacked>Registration</ion-label>
+        <ion-input type="password" placeholder="Registration"></ion-input>
+      </ion-item>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+      <ion-item>
+        <ion-label>Steel Metal</ion-label>
+        <ion-checkbox [(ngModel)]="model1" ></ion-checkbox>
+      </ion-item>
+  </ion-row>
+    <ion-row>
+      <ion-item>
+        <ion-label>Composite</ion-label>
+        <ion-checkbox [(ngModel)]="model2"></ion-checkbox>
+      </ion-item>
+    </ion-row>
+</ion-grid>
+</ion-content>
