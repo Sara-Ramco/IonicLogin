@@ -1,8 +1,9 @@
 import { Component } from '@angular/core';
-import { HomePage } from "../home/home";
+//import { HomePage } from "../home/home";
 import { TranslateService } from '@ngx-translate/core';
 import { IonicPage, NavController, ToastController } from 'ionic-angular';
 import { User } from "../../providers/providers";
+import { ListPage } from '../list/list';
 /**
  * Generated class for the LoginPage page.
  *
@@ -36,9 +37,9 @@ export class LoginPage {
   // Attempt to login in through our User service
   doLogin() {
     this.user.login(this.account).subscribe((resp) => {
-      this.navCtrl.push(HomePage);
+      this.navCtrl.push(ListPage);
     }, (err) => {
-      this.navCtrl.push(HomePage);
+      this.navCtrl.push(ListPage);
       // Unable to log in
       let toast = this.toastCtrl.create({
         message: this.loginErrorString,

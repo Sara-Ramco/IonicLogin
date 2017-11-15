@@ -12,10 +12,14 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from "../pages/login/login";
+import { ListPage } from '../pages/list/list';
+
 import { Items } from '../mocks/providers/items';
+import {DamageAssessments} from '../mocks/providers/damageAssessments';
 import { Settings } from '../providers/providers';
 import { User } from '../providers/providers';
 import { Api } from '../providers/providers';
+
 
 
 // The translate loader needs to know where to load i18n files
@@ -44,7 +48,8 @@ export function provideSettings(storage: Storage) {
   declarations: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    ListPage
   ],
   imports: [
     BrowserModule,
@@ -63,17 +68,19 @@ export function provideSettings(storage: Storage) {
   entryComponents: [
     MyApp,
     HomePage,
-    LoginPage
+    LoginPage,
+    ListPage
   ],
   providers: [
     Api,
     Items,
     User,
+    DamageAssessments,
     //Camera,  
     StatusBar,
     SplashScreen,
     { provide: Settings, useFactory: provideSettings, deps: [Storage] },
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    { provide: ErrorHandler, useClass: IonicErrorHandler }
   ]
 })
 export class AppModule {}
